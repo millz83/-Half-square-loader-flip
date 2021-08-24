@@ -1,0 +1,49 @@
+body {
+    background-color: purple;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+
+}
+
+
+.square-half-loader {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	perspective: 200px;
+}
+.square-half-loader::after,
+.square-half-loader::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 65px;
+	width: 65px;
+	background: rgb(226, 167, 167);
+	animation: flip 2s linear infinite;
+	transform-origin: right bottom;
+}
+.square-half-loader::after {
+	animation-delay: 1s;
+	opacity: 0.5;
+}
+@keyframes flip {
+	0% {
+		transform: rotateX(0) rotateY(0);
+	}
+	25% {
+		transform: rotateX(0) rotateY(180deg);
+	}
+	50% {
+		transform: rotateX(180deg) rotateY(180deg);
+	}
+	75% {
+		transform: rotateX(180deg) rotateY(0);
+	}
+	100% {
+		transform: rotateX(0) rotateY(0);
+	}
+}
